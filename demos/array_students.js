@@ -14,11 +14,11 @@ for (let i = 0; i < students.length; i++) {
   console.log(students[i]);
 }
 
-let x = 10;
-let y = 7;
+// let x = 10;
+// let y = 7;
 
-if (x > 5) {
-    let y = 10;
-    return y 
-}
-console.log(y)
+// if (x > 5) {
+//     let y = 10;
+//     return y 
+// }
+// console.log(y)
