@@ -13,3 +13,12 @@ for (let i = 0; i < students.length; i++) {
   let studentName = students[i];
   console.log(students[i]);
 }
+
+let x = 10;
+let y = 7;
+
+if (x > 5) {
+    let y = 10;
+    return y 
+}
+console.log(y)
