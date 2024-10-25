@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football</title>
+
+    <style>
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          text-align: center;
+          background-color: lightskyblue;
+        }
+        h2 {
+          text-align: center;
+          font-family: 'Times New Roman', Times, serif;
+        }
+        .gif {
+          margin-bottom: 20px;
+          width: 200px;
+        }
+  
+        .card {
+          width: 18rem;
+          margin-top: 20px;
+        }
+  
+        select {
+          margin-top: 20px;
+        }
+      </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class=""question">What's Your Favroite Football Team?</h2>
+        <img
+            class="gif"
+            alt="gif"
+            src="https://media.giphy.com/media/dWryx4eltxMMEXOIzi/giphy.gif?cid=790b76112ukjgsqn06ep2auhp1vtw7ebpea057ul7bgihttp&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+        />
+        <div class="card p-4" style="width: 18rem">
+            <form>
+                <div class="mb-3">
+                   <h3 <label for="Football" class="form-label">Please Select</label></div>
+                    <select class="form-select" id="Football" required>
+                      <option value="">Select</option>
+                    </select>
+                    <button type="button" onclick="showTeamDetails()">Show Team Info</button>
+                  </div>
+            </form>
+            <p id="teamDetailsParagraph"></p>
+         </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let teams = [
+{code:"DAL", name:"Dallas Cowboys", plays:"Arlington, TX"},
+{code:"DEN", name:"Denver Broncos", plays:"Denver, CO"},
+{code:"HOU", name:"Houston Texans", plays:"Houston, TX"},
+{code:"KAN", name:"Kansas City Chiefs",
+plays:"Kansas City, MO"},
+];
+
+const footballDropdown = document.getElementById("Football");
+        const teamDetailsParagraph = document.getElementById("teamDetailsParagraph");
+
+        function loadTeams() {
+            for (const team of teams) {
+                let option = document.createElement("option");
+                option.textContent = team.name;
+                option.value = team.code;
+                footballDropdown.appendChild(option);
+            }
+        }
+        function showTeamDetails() {
+            const teamCode = footballDropdown.value;
+            const selectedTeam = teams.find((team) => team.code === teamCode);
+            if (selectedTeam) {
+                teamDetailsParagraph.innerText = `You selected: ${selectedTeam.name}, who play in ${selectedTeam.plays}`;
+            } else {
+                teamDetailsParagraph.innerText = "Please select a valid option.";
+            }
+        }
+        loadTeams();
+        window.showTeamDetails = showTeamDetails;
+    });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- // let selectElement = document.getElementById("Football");
+
+// for (const team of teams) {
+//     let option = new Option(team.name, team.code);
+//     selectElement.add(option);
+// }
+
+// function showDetails() {
+//     let selectedCode = selectElement.value;
+//     let selectedTeam = teams.find(team => team.code === selectedCode);
+//         if (team.code === selectedCode);
+//         if (selectedTeam) {
+//         alert(`You selected: ${selectedTeam.name}, who play in ${selectedTeam.plays}`);
+//     } else {
+//         alert("Please select a valid option."); -->
